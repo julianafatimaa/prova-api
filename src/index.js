@@ -1,6 +1,8 @@
 import 'dotenv/config'
+
 import express from 'express'
 import cors from 'cors'
+
 import {dobro} from './services.js'
 import {febre} from './services.js'
 
@@ -8,13 +10,16 @@ const server = express ();
 server.use(cors());
 
 server.get('/ping', (req, resp) => {
-    return 'pong';
+    resp.send('pong');
 })
 
 
 try{
 server.get('dobro/:numero' ,(req, resp) => {
     const d= dobro(10);
+    resp.send({
+       dobro = d
+    })
 })
 
 server.post ('/somar',(req,resp) => {
@@ -26,7 +31,7 @@ server.post ('/somar',(req,resp) => {
     })
 })
 
-server.get ('/media',(req,resp) => {
+server.post ('/media',(req,resp) => {
     let a= Number(req.query.a);
     let b= Number(req.query.b);
     let c= Number(req.query.c);
@@ -36,12 +41,28 @@ server.get ('/media',(req,resp) => {
     })
 })
 
-server.get('/temperatura',(req,resp)  => { 
+server.get('/dias/corprimaria/:cor' ,(req,resp) => { 
+    const corp= corprimaria;
+    resp.send({
+      corp=corprimaria
+    })
+})
+
+server.post('/dias/ingresocinema' , (req,resp) => {
+    const igre= ingresso;
+    resp.send({
+        igre= ingresso 
+    })
+})
+
+server.get('/temperatura',(req ,resp)  => { 
      const d= febre;
      resp.send({
         febre= d
     })
 })
+
+server.get('/dias')
 }
 catch(err)
 {
