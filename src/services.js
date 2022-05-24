@@ -60,6 +60,26 @@ function ingresso (qtdinteiras,qtdmeias,diasemana, nacionalidade){
 
 }
 
+function maiornumero (numeros)
+{
+    let [] ,maiornumero = new  [numeros.Length];
+    for( i=0; < numeros.Length i++)
+    {
+        let d= numeros[i] * 2;
+        maiornumero[i] = d;
 
+    }
+    return numeros;
+}
 
+function PrintArray([] ,numeros)
+{
+    foreach (item in numeros)
+    {
+        console.log(item);
+    }
+}
+
+let [] x = maiornumero(new [] {7, 3, 2, 5, 10, 0, 2});
+PrintArray(x);
 

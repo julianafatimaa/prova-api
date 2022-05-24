@@ -62,8 +62,19 @@ server.get('/temperatura',(req ,resp)  => {
     })
 })
 
-server.get('/dias')
+server.post('/dia2/maiornumero' ,(req,resp) => {
+        const maior=maiornumero;
+        resp.send({
+         maior=maiornumero
+})
 }
+}
+
+
+
+
+
+
 catch(err)
 {
 console.log('deu erro');
